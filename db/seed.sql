@@ -12,3 +12,4 @@ create table posts (
     ,content text
     ,author_id int REFERENCES users(id)
 )
+

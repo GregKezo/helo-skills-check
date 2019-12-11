@@ -71,20 +71,20 @@ class Dashboard extends Component {
   render(){
     const mappedPosts = this.state.posts.map( (ele, i) => {
      return (
-        <div className="post-summary" key={i} id={ele.post_id}>
-          {/* <Link to={`/post/${ele.post_id}`} style={{textDecoration:'none'}}> */}
-            <h1>{ele.title}</h1>
-            <div className="info">
-              <p>By: {ele.author_id}</p>
-              <img 
-                src={`${ele.profile_pic}.png`} 
-                alt="profile pic" 
-                style={{width:'60px', 
-                  borderRadius:'30px', 
-                  backgroundColor:'#f2f2f2'}}/>
-            </div>
-          {/* </Link> */}
-        </div>
+        <Link to={`/post/${ele.post_id}`} style={{textDecoration:'none'}}>
+          <div className="post-summary" key={i} id={ele.post_id}>
+              <h1>{ele.title}</h1>
+              <div className="info">
+                <p>By: {ele.author_id}</p>
+                <img 
+                  src={`${ele.profile_pic}.png`} 
+                  alt="profile pic" 
+                  style={{width:'60px', 
+                    borderRadius:'30px', 
+                    backgroundColor:'#f2f2f2'}}/>
+              </div>
+          </div>
+        </Link>
      )
     })
     return(
