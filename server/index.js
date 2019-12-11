@@ -20,7 +20,7 @@ app.use(session({
 massive(CONNECTION_STRING).then( db => {
   app.set('db', db)
   console.log(gs.summer('all your (data)base are belong to us'))
-})
+}).catch(err => console.log(err))
 
 //api endpoints
 app.post('/api/auth/register', authCtrl.register)
